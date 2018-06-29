@@ -16,9 +16,10 @@ import shutil
 import sys
 
 import six.moves.cPickle as pickle
+from gi.repository.Gdk import SELECTION_CLIPBOARD
 from gi.repository.GdkPixbuf import Colorspace, Pixbuf
 from gi.repository.GObject import GError
-from gi.repository.Gtk import IconTheme, Menu, MenuItem, RadioMenuItem, SeparatorMenuItem, SortType
+from gi.repository.Gtk import Clipboard, IconTheme, Menu, MenuItem, RadioMenuItem, SeparatorMenuItem, SortType
 
 from deluge.common import get_pixmap, osx_check, windows_check
 
@@ -329,8 +330,8 @@ def listview_replace_treestore(listview):
 
 def get_clipboard_text():
     text = (
-        Gdk.Clipboard.Get(selection=Gdk.SELECTION_CLIPBOARD).wait_for_text()
-        or Gdk.Clipboard.Get().wait_for_text()
+        Clipboard.get(selection=SELECTION_CLIPBOARD).wait_for_text()
+        or Clipboard.get().wait_for_text()
     )
     if text:
         return text.strip()

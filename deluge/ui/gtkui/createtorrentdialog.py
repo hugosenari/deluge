@@ -55,7 +55,7 @@ class CreateTorrentDialog(object):
         self.config = ConfigManager('gtkui.conf')
 
         self.dialog = self.builder.get_object('create_torrent_dialog')
-        self.dialog.set_transient_for(component.get('MainWindow').get_window())
+        self.dialog.set_transient_for(component.get('MainWindow').window)
 
         self.builder.connect_signals(self)
 
@@ -246,7 +246,7 @@ class CreateTorrentDialog(object):
             dialog.hide()
         else:
             # Setup the filechooserdialog
-            chooser = gtk.FileChooserDialog(
+            chooser = Gtk.FileChooserDialog(
                 _('Save .torrent file'), self.dialog,
                 Gtk.FileChooserAction.SAVE,
                 buttons=(
