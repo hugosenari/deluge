@@ -15,7 +15,7 @@ from base64 import b64encode
 from xml.sax.saxutils import escape as xml_escape
 from xml.sax.saxutils import unescape as xml_unescape
 
-from gi.repository import Gdk, Gtk
+from gi.repository import Gtk
 from gi.repository.GObject import TYPE_INT64, TYPE_UINT64
 
 import deluge.common
@@ -312,7 +312,7 @@ class AddTorrentDialog(component.Component):
                         value[1]['size'],
                         value[0],
                         False,
-                        Gtk.STOCK_FILE
+                        Gtk.STOCK_FILE,
                     ],
                 )
                 ret += value[1]['size']
@@ -555,7 +555,7 @@ class AddTorrentDialog(component.Component):
                 Gtk.ResponseType.CANCEL,
                 Gtk.STOCK_OPEN,
                 Gtk.ResponseType.OK,
-            )
+            ),
         )
 
         chooser.set_transient_for(self.dialog)
