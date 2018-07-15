@@ -13,7 +13,7 @@ import logging
 import os.path
 from hashlib import sha1 as sha
 
-from gi.repository import Gdk, Gtk
+from gi.repository import Gtk
 from gi.repository.Gdk import DragAction, WindowState
 from twisted.internet import reactor
 from twisted.internet.error import ReactorNotRunning

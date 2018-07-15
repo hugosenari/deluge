@@ -13,7 +13,7 @@ from __future__ import division, print_function, unicode_literals
 import os
 
 # FIXME: use this as fallback to get_introspection_module?
-#from gi.importer import modules
+# from gi.importer import modules
 from gi.module import get_introspection_module
 from gi.repository import Gdk, GObject, Gtk
 from gi.repository.GObject import SignalFlags
@@ -660,7 +660,7 @@ class PathChooserPopup(object):
             ),
             None,
             None,
-            activate_time
+            activate_time,
         ) == 0:
             if Gdk.keyboard_grab(self.popup_window.get_window(), True, activate_time) == 0:
                 return True
@@ -1029,8 +1029,9 @@ class PathAutoCompleter(object):
         elif self.completion_popup.is_popped_up() and args['forward_completion']:
             self.completion_popup.popdown()
 
+
 # FIXME: use this as fallback to get_introspection_module?
-#GtkGI = modules['Gtk']._introspection_module
+# GtkGI = modules['Gtk']._introspection_module
 GtkGI = get_introspection_module('Gtk')
 
 
@@ -1077,10 +1078,11 @@ class PathChooserComboBox(GtkGI.Box, StoredValuesPopup, GObject.GObject):
         self.default_text = None
         self.button_properties = self.builder.get_object('button_properties')
 
-        #self.combobox_window = self.builder.get_object('combobox_window')
+        # FIXME: These are commented out but should be fixed.
+        # self.combobox_window = self.builder.get_object('combobox_window')
         self.combo_hbox = self.builder.get_object('entry_combobox_hbox')
         # Change the parent of the hbox from the glade Window to this hbox.
-        #self.combobox_window.remove(self.combo_hbox)
+        # self.combobox_window.remove(self.combo_hbox)
         self.combobox_window = self.get_window()
         self.add(self.combo_hbox)
         StoredValuesPopup.__init__(self, self.builder, self, max_visible_rows, self.combo_hbox)
@@ -1525,6 +1527,7 @@ class PathChooserComboBox(GtkGI.Box, StoredValuesPopup, GObject.GObject):
             'on_set_completion_accelerator_button_clicked': on_set_completion_accelerator_button_clicked,
             'on_show_hidden_files_checkbutton_toggled': on_show_hidden_files_toggled,
         }
+
 
 GObject.type_register(PathChooserComboBox)
 

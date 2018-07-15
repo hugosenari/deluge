@@ -9,7 +9,6 @@
 
 from __future__ import unicode_literals
 
-from gi.repository import Gdk, Gtk
 from gi.repository.Gdk import ModifierType
 from gi.repository.Gtk import SeparatorMenuItem, accel_groups_from_object
 from gi.repository.Gtk.AccelFlags import VISIBLE
@@ -43,7 +42,13 @@ def menubar_osx(gtkui, osxapp):
     accel_meta(file_items[0], group, 'o')
     accel_meta(file_items[1], group, 'n')
     quit_all_item = file_items[3]
-    accel_swap(quit_all_item, group, 'q', ModifierType.SHIFT_MASK | ModifierType.CONTROL_MASK, 'q', ModifierType.SHIFT_MASK | ModifierType.META_MASK)
+    accel_swap(
+        quit_all_item, group,
+        'q',
+        ModifierType.SHIFT_MASK | ModifierType.CONTROL_MASK,
+        'q',
+        ModifierType.SHIFT_MASK | ModifierType.META_MASK,
+    )
     for item in range(2, len(file_items)):  # remove quits
         file_menu.remove(file_items[item])
 
