@@ -1037,19 +1037,20 @@ GtkGI = get_introspection_module('Gtk')
 
 class PathChooserComboBox(GtkGI.Box, StoredValuesPopup, GObject.GObject):
 
+    RUN_FIRST_SIGNAL_PROPS = (GObject.SignalFlags.RUN_FIRST, GObject.TYPE_NONE, (object, ))
     __gsignals__ = {
-        b'list-value-added': (SignalFlags.RUN_FIRST, None, (object, )),
-        b'list-value-removed': (SignalFlags.RUN_FIRST, None, (object, )),
-        b'list-values-reordered': (SignalFlags.RUN_FIRST, None, (object, )),
-        b'list-values-changed': (SignalFlags.RUN_FIRST, None, (object, )),
-        b'auto-complete-enabled-toggled': (SignalFlags.RUN_FIRST, None, (object, )),
-        b'show-filechooser-toggled': (SignalFlags.RUN_FIRST, None, (object, )),
-        b'show-path-entry-toggled': (SignalFlags.RUN_FIRST, None, (object, )),
-        b'show-folder-name-on-button': (SignalFlags.RUN_FIRST, None, (object, )),
-        b'show-hidden-files-toggled': (SignalFlags.RUN_FIRST, None, (object, )),
-        b'accelerator-set': (SignalFlags.RUN_FIRST, None, (object, )),
-        b'max-rows-changed': (SignalFlags.RUN_FIRST, None, (object, )),
-        b'text-changed': (SignalFlags.RUN_FIRST, None, (object, )),
+        'text-changed': RUN_FIRST_SIGNAL_PROPS,
+        'accelerator-set': RUN_FIRST_SIGNAL_PROPS,
+        'max-rows-changed': RUN_FIRST_SIGNAL_PROPS,
+        'list-value-added': RUN_FIRST_SIGNAL_PROPS,
+        'list-value-removed': RUN_FIRST_SIGNAL_PROPS,
+        'list-values-changed': RUN_FIRST_SIGNAL_PROPS,
+        'list-values-reordered': RUN_FIRST_SIGNAL_PROPS,
+        'show-path-entry-toggled': RUN_FIRST_SIGNAL_PROPS,
+        'show-filechooser-toggled': RUN_FIRST_SIGNAL_PROPS,
+        'show-hidden-files-toggled': RUN_FIRST_SIGNAL_PROPS,
+        'show-folder-name-on-button': RUN_FIRST_SIGNAL_PROPS,
+        'auto-complete-enabled-toggled': RUN_FIRST_SIGNAL_PROPS,
     }
 
     def __init__(self, max_visible_rows=20, auto_complete=True, use_completer_popup=True):
@@ -1543,7 +1544,7 @@ if __name__ == '__main__':
     w.set_title('ComboEntry example')
     w.connect('delete-event', Gtk.main_quit)
 
-    box1 = Gtk.VBox(False, 0)
+    box1 = Gtk.Box(Gtk.Orientation.VERTICAL, 0)
 
     def get_resource2(filename):
         return '%s/glade/%s' % (os.path.abspath(os.path.dirname(sys.argv[0])), filename)
