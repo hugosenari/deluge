@@ -124,7 +124,7 @@ class SearchBox(object):
     def hide(self):
         self.visible = False
         self.clear_search()
-        self.search_box.hide_all()
+        self.search_box.hide()
         self.search_pending = self.prefiltered = None
 
     def clear_search(self):

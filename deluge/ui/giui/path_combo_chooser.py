@@ -538,7 +538,7 @@ class PathChooserPopup(object):
         if not self.path_entry.get_realized():
             return
         self.popup_window.grab_remove()
-        self.popup_window.hide_all()
+        self.popup_window.hide()
 
     def is_popped_up(self):
         """Check if window is popped up.
