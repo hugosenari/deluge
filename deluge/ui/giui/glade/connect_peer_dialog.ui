@@ -14,7 +14,7 @@
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox4">
         <property name="visible">True</property>
-        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+        <property name="orientation">vertical</property>
         <property name="can_focus">False</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
@@ -65,7 +65,7 @@
         <child>
           <object class="GtkBox" id="vbox1">
             <property name="visible">True</property>
-            <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+            <property name="orientation">vertical</property>
             <property name="can_focus">False</property>
             <property name="spacing">2</property>
             <child>
@@ -89,7 +89,6 @@
                   <object class="GtkLabel" id="label1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    
                     <property name="label" translatable="yes">Add Peer</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -110,7 +109,6 @@
             </child>
             <child>
               <object class="GtkSeparator" id="hseparator1">
-                <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
               </object>

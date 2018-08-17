@@ -78,7 +78,7 @@
     <child>
       <object class="GtkBox" id="vbox1">
         <property name="visible">True</property>
-        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+        <property name="orientation">vertical</property>
         <property name="can_focus">False</property>
         <child>
           <object class="GtkMenuBar" id="menubar">
@@ -614,7 +614,7 @@ This will filter torrents for the current selection on the sidebar.</property>
             <child>
               <object class="GtkPaned" id="vpaned">
                 <property name="visible">True</property>
-                <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                <property name="orientation">vertical</property>
                 <property name="can_focus">False</property>
                 <child>
                   <object class="GtkPaned" id="main_window_hpaned">
@@ -633,7 +633,7 @@ This will filter torrents for the current selection on the sidebar.</property>
                     <child>
                       <object class="GtkBox" id="vbox2">
                         <property name="visible">True</property>
-                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                        <property name="orientation">vertical</property>
                         <property name="can_focus">False</property>
                         <child>
                           <!-- <object class="Gtk H Box" id="search_box"> -->

@@ -511,8 +511,6 @@
                   <object class="GtkAlignment" id="alignment54">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="yalign">0</property>
-                    <property name="yscale">0</property>
                     <property name="top_padding">5</property>
                     <property name="bottom_padding">2</property>
                     <property name="left_padding">10</property>
@@ -1197,8 +1195,6 @@
                                   <object class="GtkAlignment" id="alignment5">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
-                                    <property name="yalign">1</property>
-                                    <property name="xscale">0.69999998807907104</property>
                                     <child>
                                       <object class="GtkButton" id="button_apply">
                                         <property name="label">_Apply</property>
@@ -1235,8 +1231,6 @@
                               <object class="GtkAlignment" id="alignment7">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="yalign">0</property>
-                                <property name="yscale">0</property>
                                 <child>
                                   <object class="GtkGrid" id="table1">
                                     <property name="visible">True</property>
@@ -1554,7 +1548,6 @@
                             <property name="can_focus">False</property>
                             <property name="halign">start</property>
                             <property name="label" translatable="yes">Tracker Status:</property>
-                            <property name="yalign">0</property>
                             <attributes>
                               <attribute name="weight" value="bold"/>
                             </attributes>
@@ -1599,7 +1592,6 @@
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="valign">start</property>
-                            <property name="xscale">0</property>
                             <property name="top_padding">5</property>
                             <child>
                               <object class="GtkButton" id="button_edit_trackers">
