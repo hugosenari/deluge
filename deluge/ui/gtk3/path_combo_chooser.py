@@ -573,16 +573,16 @@ class PathChooserPopup(object):
 
         height_extra = 8
         buttonbox_width = 0
-        height = self.popup_window.get_preferred_size().height
-        width = self.popup_window.get_preferred_size().width
+        height = self.popup_window.get_preferred_height()[1]
+        width = self.popup_window.get_preferred_width()[1]
 
         if self.popup_buttonbox:
-            buttonbox_height = max(self.popup_buttonbox.get_preferred_size().height,
+            buttonbox_height = max(self.popup_buttonbox.get_preferred_height()[1],
                                    self.popup_buttonbox.get_allocation().height)
-            buttonbox_width = max(self.popup_buttonbox.get_preferred_size().width,
+            buttonbox_width = max(self.popup_buttonbox.get_preferred_width()[1],
                                   self.popup_buttonbox.get_allocation().width)
-            treeview_width = self.treeview.get_preferred_size().width
-            # After removing an element from the tree store, self.treeview.get_preferred_size()[0]
+            treeview_width = self.treeview.get_preferred_width()[1]
+            # After removing an element from the tree store, self.treeview.get_preferred_width()[0]
             # returns -1 for some reason, so the requested width cannot be used until the treeview
             # has been displayed once.
             if treeview_width != -1:
@@ -596,12 +596,12 @@ class PathChooserPopup(object):
             width = self.alignment_widget.get_allocation().width
 
         # 10 is extra spacing
-        content_width = self.treeview.get_preferred_size().width + buttonbox_width + 10
+        content_width = self.treeview.get_preferred_width()[1] + buttonbox_width + 10
 
         # Adjust height according to number of list items
         if len(self.tree_store) > 0 and self.max_visible_rows > 0:
             # The height for one row in the list
-            self.row_height = self.treeview.get_preferred_size().height / len(self.tree_store)
+            self.row_height = self.treeview.get_preferred_height()[1] / len(self.tree_store)
             # Set height to number of rows
             height = len(self.tree_store) * self.row_height + height_extra
             # Adjust the height according to the max number of rows
