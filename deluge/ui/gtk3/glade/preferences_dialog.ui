@@ -2626,6 +2626,7 @@ used sparingly.</property>
                                                 <property name="sensitive">False</property>
                                                 <property name="can_focus">True</property>
                                                 <property name="max_length">5</property>
+                                                <property name="max_width_chars">6</property>
                                                 <property name="primary_icon_activatable">False</property>
                                                 <property name="secondary_icon_activatable">False</property>
                                                 <property name="adjustment">adjustment_spin_incoming_port</property>
@@ -2960,6 +2961,7 @@ The interface adapter name for outgoing BitTorrent connections. (Leave empty for
                                           <object class="GtkGrid" id="table7">
                                             <property name="visible">True</property>
                                             <property name="can_focus">False</property>
+                                            <property name="row_spacing">6</property>
                                             <child>
                                               <object class="GtkComboBox" id="combo_encout">
                                                 <property name="visible">True</property>
