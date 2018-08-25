@@ -11,21 +11,13 @@ from __future__ import division, unicode_literals
 
 from math import pi
 
-<<<<<<< HEAD:deluge/ui/gtk3/piecesbar.py
 import cairo
-=======
->>>>>>> origin/Feature/GTK3UI:deluge/ui/gtk3/piecesbar.py
 import gi  # isort:skip (Version check required before import).
 gi.require_version('PangoCairo', '1.0')  # NOQA: E402
 
 # isort:imports-thirdparty
-<<<<<<< HEAD:deluge/ui/gtk3/piecesbar.py
 from gi.repository import PangoCairo
 from gi.repository.Gtk import DrawingArea, ProgressBar, StateFlags
-=======
-from gi.repository import PangoCairo, cairo
-from gi.repository.Gtk import DrawingArea, ProgressBar
->>>>>>> origin/Feature/GTK3UI:deluge/ui/gtk3/piecesbar.py
 from gi.repository.Pango import SCALE, Weight
 
 # isort:imports-firstparty
@@ -43,11 +35,7 @@ class PiecesBar(DrawingArea):
         # Get progress bar styles, in order to keep font consistency
         pb = ProgressBar()
         pb_style = pb.get_style_context()
-<<<<<<< HEAD:deluge/ui/gtk3/piecesbar.py
         self.text_font = pb_style.get_property('font', StateFlags.NORMAL)
-=======
-        self.text_font = pb_style.get_property('font', Gtk.StateFlags.NORMAL)
->>>>>>> origin/Feature/GTK3UI:deluge/ui/gtk3/piecesbar.py
         self.text_font.set_weight(Weight.BOLD)
         # Done with the ProgressBar styles, don't keep refs of it
         del pb, pb_style
